@@ -1,13 +1,14 @@
 import { BrowserRouter } from "react-router-dom"
 import { Container } from "./styles"
 import ScrollAnimation from "react-animate-on-scroll"
-import Illustration from "../../assets/illustration.svg"
+import Illustration from "../../assets/Illustration.svg"
 import { NavHashLink } from "react-router-hash-link"
 import linkedin from '../../assets/linkedin.svg'
 import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import telegram from '../../assets/telegram.svg'
+import ScrollIndicator from "../Scrolldown/Scrolldown"
 export function Hero() {
   return (
     <Container id="home">
@@ -18,9 +19,11 @@ export function Hero() {
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
           <h1>M Mateen Qazi</h1>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
-          <h3>Full Stack Developer</h3>
-        </ScrollAnimation>
+        <div className="rotating-text">
+        <span>Full Stack Developer</span>
+        <span>Node.js Developer</span>
+        <span>React Developer</span>
+        </div>
         <ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}>
           <p className="small-resume">3+ Years of Experience</p>
         </ScrollAnimation>
@@ -65,6 +68,8 @@ export function Hero() {
           <img src={Illustration} alt="Ilustração" />
         </ScrollAnimation>
       </div>
+      <ScrollIndicator/>
+        
     </Container>
   )
 }
